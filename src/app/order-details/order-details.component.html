@@ -1,0 +1,33 @@
+<ul class="uk-list uk-list-divider">
+  <li>
+    <strong>Número do pedido: </strong> {{ order.id }}
+  </li>
+  <li>
+    <strong>Data do pedido: </strong> {{ order.date }}
+  </li>
+  <li>
+    <strong>Cliente: </strong> {{ order.customer.name }} / {{ order.customer.email }}
+  </li>
+  <li>
+    <strong>Número do pedido: </strong> {{ order.id }}
+  </li>
+</ul>
+
+<h4>Items do pedido</h4>
+
+<table>
+  <thead>
+    <tr class="uk-text-center">Produto</tr>
+    <tr class="uk-text-center">Preço</tr>
+    <tr class="uk-text-center">Quantidade</tr>
+    <tr class="uk-text-center">Total</tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of order.items">
+      <td>{{ item.product }}</td>
+      <td class="uk-text-center">{{ item.price | currency: 'BRL' }}</td>
+      <td class="uk-text-center">{{ item.quantity }}</td>
+      <td class="uk-text-center">{{ item.total | currency: 'BRL' }}</td>
+    </tr>
+  </tbody>
+</table>

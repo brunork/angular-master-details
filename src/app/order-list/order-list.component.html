@@ -1,0 +1,23 @@
+<table class="uk-table uk-table-divider uk-table-striped uk-table-hover" *ngIf="orders">
+    <thead>
+        <tr>
+            <th class="uk-text-center">Pedido</th>
+            <th class="uk-text-center">Cliente</th>
+            <th class="uk-text-center">Data</th>
+            <th class="uk-text-center">Total</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of orders" (click)="showOrderDetails(item.id)" class="clickable">
+            <td class="uk-text-center"> {{ item.id }} </td>
+            <td class="uk-text-center"> {{ item.customer.name }}</td>
+            <td class="uk-text-center"> {{ item.date | date: 'dd/MM/yyyy'}}</td>
+            <td class="uk-text-center"> {{ item.total | currency: 'BRL' }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="uk-placeholder" *ngIf="order">
+    <app-order-details [order]="order"></app-order-details>
+</div>

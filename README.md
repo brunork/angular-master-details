@@ -21,18 +21,17 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 
-## Running fake backend provider
+## Running a fake backend provider
 
-# json-server installation
 First, you need to install a json-server. You can do it globally (-g) with npm:
 
 `npm install -g json-server`
 
-# Create a JSON file with mock data
+Create a JSON file with mock data
 
 In the root folder of your application, create a file with the extension .json.
 
-#Run it
+Run it
 
 Run the json-server in a terminal and launch the JSON file. The option watch (shortcut: -w) allows to reload automatically the browser when the JSON file is modified:
 
